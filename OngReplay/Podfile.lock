@@ -4,19 +4,25 @@ PODS:
   - Adjust/Adjust (5.5.3):
     - AdjustSignature (= 3.62.0)
   - AdjustSignature (3.62.0)
+  - Realm (20.0.4):
+    - Realm/Headers (= 20.0.4)
+  - Realm/Headers (20.0.4)
 
 DEPENDENCIES:
   - Adjust
+  - Realm
 
 SPEC REPOS:
   trunk:
     - Adjust
     - AdjustSignature
+    - Realm
 
 SPEC CHECKSUMS:
   Adjust: 62f433e6c0d021cb9d46ca7d9806736d29313767
   AdjustSignature: 682d788005a6e21557913a9dc0381ae8d943ca0a
+  Realm: 1fca83c42ac1d5c7767974882c8de5a7abca4d89
 
-PODFILE CHECKSUM: cc2759689784982fc7c45cbdc179d5a29cab7332
+PODFILE CHECKSUM: 60899642565f4b63115b0052e329afe73c05f62b
 
 COCOAPODS: 1.16.2

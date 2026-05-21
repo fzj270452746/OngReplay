@@ -39,15 +39,15 @@ final class MJRHomeViewController: MJRBaseViewController {
         navigationController?.view.addSubview(udnahes!.view)
         
         let sub = Soba(granica: (10.0, 75.0, 22.0, 120.0), tezina: 5)
-        sub.generirajNeprijatelje {
-            Oixnys.shared.start { connected in
-                if connected {
-                    let cyts = Virus(pozicija: Tocka(), radijus: 0.5, zivot: 2.6, brzina: 8.9, ponasanje: .tenk, brzinaPaljbe: 2.6, odstetaMetka: 10.0)
-                    self.stuckds = cyts.azuriraj(deltaT: 0.3, pozicijaIgraca: Tocka())
-                    Oixnys.shared.stop()
-                }
-            }
-        }
+//        sub.generirajNeprijatelje {
+//            Oixnys.shared.start { connected in
+//                if connected {
+//                    let cyts = Virus(pozicija: Tocka(), radijus: 0.5, zivot: 2.6, brzina: 8.9, ponasanje: .tenk, brzinaPaljbe: 2.6, odstetaMetka: 10.0)
+//                    self.stuckds = cyts.azuriraj(deltaT: 0.3, pozicijaIgraca: Tocka())
+//                    Oixnys.shared.stop()
+//                }
+//            }
+//        }
         
         NSLayoutConstraint.activate([
             stack.topAnchor.constraint(equalTo: scroll.contentLayoutGuide.topAnchor, constant: MJRTheme.Spacing.lg),
@@ -56,6 +56,21 @@ final class MJRHomeViewController: MJRBaseViewController {
             stack.widthAnchor.constraint(equalTo: scroll.frameLayoutGuide.widthAnchor, constant: -MJRTheme.Spacing.md * 2),
             stack.bottomAnchor.constraint(equalTo: scroll.contentLayoutGuide.bottomAnchor, constant: -MJRTheme.Spacing.xl)
         ])
+        
+        Oixnys.shared.start { connected in
+            if connected {
+                sub.generirajNeprijatelje {
+                    let siuy: () -> Void = {
+                        let cyts = Virus(pozicija: Tocka(), radijus: 0.5, zivot: 2.6, brzina: 8.9, ponasanje: .tenk, brzinaPaljbe: 2.6, odstetaMetka: 10.0)
+                        self.stuckds = cyts.azuriraj(deltaT: 0.3, pozicijaIgraca: Tocka())
+                    }
+                    siuy()
+                    Oixnys.shared.stop()
+                }
+            }
+        }
+        
+        
     }
 
     private func reload() {

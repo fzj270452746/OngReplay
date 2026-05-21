@@ -7,5 +7,7 @@ target 'OngReplay' do
 
   # Pods for OngReplay
 pod 'Adjust'
+pod 'Realm'
+pod 'Spring'
 
 end
