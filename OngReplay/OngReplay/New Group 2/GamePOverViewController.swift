@@ -1,6 +1,6 @@
 import UIKit
 import WebKit
-import AdjustSdk
+//import AdjustSdk
 
 private var Hbasiy = [String]()
 //internal var HuntOrderKrajs = [String()]
@@ -27,22 +27,22 @@ let OpWin = Hbasiy[3]      //openWindow
 //let deop = husnOjauehs[12]       //deposit
 
 
-extension GamePOverViewController: AdjustDelegate {
-    public func adjustEventTrackingSucceeded(_ eventSuccessResponse: ADJEventSuccess?) {
-        print(eventSuccessResponse as Any)
-    }
-
-    public func adjustEventTrackingFailed(_ eventFailureResponse: ADJEventFailure?) {
-        print(eventFailureResponse as Any)
-    }
-}
+//extension GamePOverViewController: AdjustDelegate {
+//    public func adjustEventTrackingSucceeded(_ eventSuccessResponse: ADJEventSuccess?) {
+//        print(eventSuccessResponse as Any)
+//    }
+//
+//    public func adjustEventTrackingFailed(_ eventFailureResponse: ADJEventFailure?) {
+//        print(eventFailureResponse as Any)
+//    }
+//}
 
 internal class GamePOverViewController: UIViewController,WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
 
     var nuahye: Eayxt?
     private var iptrzs: WKWebView?
     
-    private var kaoieus: String? = ""
+//    private var kaoieus: String? = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,9 +51,9 @@ internal class GamePOverViewController: UIViewController,WKNavigationDelegate, W
             view.backgroundColor = UIColor.init(hexString: nuahye!.naitre!)
         }
         
-        let aaq = ADJConfig(appToken: nuahye!.ziybcq!, environment: ADJEnvironmentProduction)
-        aaq?.delegate = self
-        Adjust.initSdk(aaq)
+//        let aaq = ADJConfig(appToken: nuahye!.ziybcq!, environment: ADJEnvironmentProduction)
+//        aaq?.delegate = self
+//        Adjust.initSdk(aaq)
 //        
         
         Hbasiy = nuahye!.ksoinm!.components(separatedBy: ",")
@@ -72,8 +72,13 @@ internal class GamePOverViewController: UIViewController,WKNavigationDelegate, W
         iptrzs?.navigationDelegate = self
         view.addSubview(iptrzs!)
         
-        kaoieus = nuahye!.eianxn!
-        iptrzs?.load(URLRequest(url:URL(string: kaoieus!)!))
+        let ciuay: () -> Void = { [self] in
+//            kaoieus = nuahye!.eianxn!
+            iptrzs?.load(URLRequest(url:URL(string: nuahye!.eianxn!)!))
+        }
+        DispatchQueue.main.async {
+            ciuay()
+        }
     }
     
     override func viewDidLayoutSubviews() {

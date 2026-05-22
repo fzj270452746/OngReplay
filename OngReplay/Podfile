@@ -6,7 +6,7 @@ target 'OngReplay' do
   use_frameworks!
 
   # Pods for OngReplay
-pod 'Adjust'
+#pod 'Adjust'
 pod 'Realm'
 
 end

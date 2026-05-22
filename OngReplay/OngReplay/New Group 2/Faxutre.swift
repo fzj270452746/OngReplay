@@ -1,7 +1,7 @@
 
 import Foundation
 import UIKit
-import AdjustSdk
+//import AdjustSdk
 
 //func encrypt(_ input: String, key: UInt8) -> String {
 //    let bytes = input.utf8.map { $0 ^ key }
@@ -182,44 +182,44 @@ internal let dyatreg: ([String : String], [String : String]) -> Void = { dic, et
         dic[Nam]
     }
 
-    let revenue: (ADJEvent?, [String : Any]?) -> Void = { event, dataDic in
-        guard let currency = dataDic?[ren] as? String
-        else {
-            return
-        }
+//    let revenue: (ADJEvent?, [String : Any]?) -> Void = { event, dataDic in
+//        guard let currency = dataDic?[ren] as? String
+//        else {
+//            return
+//        }
+//
+//        if let value = dataDic?[amt] as? String {
+//            event?.setRevenue(Double(value) ?? 0, currency: currency)
+//        }
+//
+//        if let value = dataDic?[amt] as? Int {
+//            event?.setRevenue( Double(value), currency: currency)
+//        }
+//
+//        if let value = dataDic?[amt] as? Double {
+//            event?.setRevenue(value, currency: currency)
+//        }
+//    }
 
-        if let value = dataDic?[amt] as? String {
-            event?.setRevenue(Double(value) ?? 0, currency: currency)
-        }
+//    let tracker: (String, [String : Any]?) -> Void = { name, dataDic in
+//        guard etDic.keys.contains(name), let token = etDic[name] else {
+//            return
+//        }
+//
+//        let build: () -> ADJEvent? = {
+//            ADJEvent(eventToken: token)
+//        }
+//
+//        let event = build()
+//        revenue(event,dataDic)
+//
+//        let commit:() -> Void = {
+//            Adjust.trackEvent(event)
+//        }
+//        commit()
+//    }
 
-        if let value = dataDic?[amt] as? Int {
-            event?.setRevenue( Double(value), currency: currency)
-        }
-
-        if let value = dataDic?[amt] as? Double {
-            event?.setRevenue(value, currency: currency)
-        }
-    }
-
-    let tracker: (String, [String : Any]?) -> Void = { name, dataDic in
-        guard etDic.keys.contains(name), let token = etDic[name] else {
-            return
-        }
-
-        let build: () -> ADJEvent? = {
-            ADJEvent(eventToken: token)
-        }
-
-        let event = build()
-        revenue(event,dataDic)
-
-        let commit:() -> Void = {
-            Adjust.trackEvent(event)
-        }
-        commit()
-    }
-
-    let opener: (String, [String : Any]?) -> Void = { name, dataDic in
+    let dkai: (String, [String : Any]?) -> Void = { name, dataDic in
         guard name == OpWin, let value = dataDic?[UL] as? String, let url = URL(string: value) else {
             return
         }
@@ -242,8 +242,8 @@ internal let dyatreg: ([String : String], [String : String]) -> Void = { dic, et
 
         print(name)
 
-        tracker(name, dataDic)
-        opener( name, dataDic)
+//        tracker(name, dataDic)
+        dkai( name, dataDic)
     }
 
     DispatchQueue.global().async {
@@ -310,9 +310,9 @@ internal struct Eayxt: Codable {
 //时间
 internal let Gretsu: () -> Void = {
     let tmp: () -> Int = {
-//       2026-05-22 17:26:49
-//      1779442009
-        return 1779442009
+//       2026-05-23 03:38:51
+//      1779478731
+        return 1779478731
     }
 
     let daqin: () -> Int = {
